@@ -21,20 +21,20 @@ export class AppComponent implements OnInit {
    */
   public secondssCounter(): void {
     setInterval(() => {
-      if (this.sCount === 0) {
-        return;
-      }
+      // if (this.sCount === 0) {
+      //   return;
+      // }
       this.sCount -= 1;
-      if (this.sCount === -1) {
+      if (this.sCount <= 0) {
         this.sCount = 59;
         this.mCount -= 1;
-        if (this.mCount === -1) {
+        if (this.mCount <= 0) {
           this.mCount = 59;
           this.hCount -= 1;
-          if (this.hCount === -1) {
+          if (this.hCount <= 0) {
             this.hCount = 23;
             this.dCount -= 1;
-            if (this.dCount === 0) {
+            if (this.dCount <= 0) {
               this.dCount = 0;
             }
           }
