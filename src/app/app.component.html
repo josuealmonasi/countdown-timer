@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<div *ngIf="!started">
+  <div class="top">
+    <input class="time-form" [(ngModel)]="dCount" type="number" name="days" min="0">
+    <input class="time-form" [(ngModel)]="hCount" type="number" name="hours" min="0" max="23">
+    <input class="time-form" [(ngModel)]="mCount" type="number" name="minutes" min="0" max="59">
+    <input class="time-form" [(ngModel)]="sCount" type="number" name="seconds" min="0" max="59">
+    <div class="action">
+      <button (click)="startCountDown()">Start</button>
+    </div>
+  </div>
+  <div class="error">
+    {{err}}
+  </div>
+</div>
+<div class="container" *ngIf="started">
+  <app-card-counter class="counter" [count]="dCount" [type]="'Days'"></app-card-counter>
+  <app-card-counter class="counter" [count]="hCount" [type]="'Hours'"></app-card-counter>
+  <app-card-counter class="counter" [count]="mCount" [type]="'Minutes'"></app-card-counter>
+  <app-card-counter class="counter" [count]="sCount" [type]="'Seconds'"></app-card-counter>
+</div>
