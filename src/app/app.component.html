@@ -1,9 +1,21 @@
 <div *ngIf="!started">
   <div class="top">
-    <input class="time-form" [(ngModel)]="dCount" type="number" name="days" min="0">
-    <input class="time-form" [(ngModel)]="hCount" type="number" name="hours" min="0" max="23">
-    <input class="time-form" [(ngModel)]="mCount" type="number" name="minutes" min="0" max="59">
-    <input class="time-form" [(ngModel)]="sCount" type="number" name="seconds" min="0" max="59">
+    <div>
+      <input class="time-form" placeholder="jhhk" [(ngModel)]="dCount" type="number" name="days" min="0">
+      <p>Days</p>
+    </div>
+    <div>
+      <input class="time-form" [(ngModel)]="hCount" type="number" name="hours" min="0" max="23">
+      <p>Hours</p>
+    </div>
+    <div>
+      <input class="time-form" [(ngModel)]="mCount" type="number" name="minutes" min="0" max="59">
+      <p>Minutes</p>
+    </div>
+    <div>
+      <input class="time-form" [(ngModel)]="sCount" type="number" name="seconds" min="0" max="59">
+      <p>Seconds</p>
+    </div>
     <div class="action">
       <button (click)="startCountDown()">Start</button>
     </div>
