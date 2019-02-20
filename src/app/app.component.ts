@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
           }
         }
       }
-    }, 1);
+    }, 1000);
   }
 
   /**
