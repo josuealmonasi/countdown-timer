@@ -21,9 +21,6 @@ export class AppComponent implements OnInit {
    */
   public secondssCounter(): void {
     setInterval(() => {
-      // if (this.sCount === 0) {
-      //   return;
-      // }
       this.sCount -= 1;
       if (this.sCount <= 0) {
         this.sCount = 59;
