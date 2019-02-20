@@ -21,6 +21,9 @@ export class AppComponent implements OnInit {
    */
   public secondssCounter(): void {
     setInterval(() => {
+      if (this.hCount === 0 && this.dCount === 0 && this.mCount === 0 && this.sCount === 0) {
+        return;
+      }
       this.sCount -= 1;
       if (this.sCount <= 0) {
         this.sCount = 59;
@@ -37,26 +40,15 @@ export class AppComponent implements OnInit {
           }
         }
       }
-    }, 1000);
+    }, 1);
   }
 
   /**
    * startCountDown
    */
   public startCountDown(): void {
-    if (this.hCount > 23) {
-      this.err = 'Hours number cannot be greater than 23';
-      this.hCount = 0;
-      return;
-    }
-    if (this.mCount > 23) {
-      this.err = 'Minutes number cannot be greater than 59';
-      this.mCount = 0;
-      return;
-    }
-    if (this.sCount > 23) {
-      this.err = 'Seconds number cannot be greater than 59';
-      this.sCount = 0;
+    if (this.dCount === 0) {
+      this.err = 'Days must be greater than 0.';
       return;
     }
     this.secondssCounter();
